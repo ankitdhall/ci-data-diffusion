@@ -1,57 +1,49 @@
 # SGLang-Diffusion Nightly Performance Dashboard
 
-*Generated: Sep 29 | Commit: `bd78095`*
-
-> [!WARNING]
-> **Performance Regression Detected**
->
-> - **qwen_image_2512_t2i_1024** (sglang): 9.12s vs 4-run median 8.38s (+8.9%)
-> - **ltx2.3_twostage_ti2v_2gpus** (sglang): 17.07s vs 4-run median 14.06s (+21.5%)
-
+*Generated: Sep 29 | Commit: `98fce73`*
 
 > [!WARNING]
 > **Incomplete Server Telemetry**
 >
 > Client-side latency includes every measured request, but server-side stage medians use only the readable perf dumps.
-> - **Wan2.2-T2V-A14B-Diffusers**: 2/3 server samples available
-> - **Cosmos3-Super**: 2/3 server samples available
+> - **Wan2.2-I2V-A14B-Diffusers**: 2/3 server samples available
 
 
 ## SGLang-Diffusion Performance
 
 | Model | Risk | Client samples | Server samples | sglang median (s) |
 |-------|------|----------------|----------------|---------|
-| Anima-Base-v1.0-Diffusers | ✅ | 3 | 3/3 | **3.28** |
-| FLUX.1-dev | ✅ | 3 | 3/3 | **4.33** |
-| FLUX.2-dev | ✅ | 3 | 3/3 | **12.28** |
-| Qwen-Image-2512 | ⚠️ | 3 | 3/3 | **9.12** |
-| Qwen-Image-Edit-2511 | ✅ | 3 | 3/3 | **14.40** |
+| Anima-Base-v1.0-Diffusers | ✅ | 3 | 3/3 | **3.25** |
+| FLUX.1-dev | ✅ | 3 | 3/3 | **4.28** |
+| FLUX.2-dev | ✅ | 3 | 3/3 | **12.38** |
+| Qwen-Image-2512 | ✅ | 3 | 3/3 | **8.16** |
+| Qwen-Image-Edit-2511 | ✅ | 3 | 3/3 | **14.43** |
 | Z-Image-Turbo | ✅ | 3 | 3/3 | **0.64** |
-| Wan2.2-T2V-A14B-Diffusers | ✅ | 3 | 2/3 | **207.63** |
-| Wan2.2-TI2V-5B-Diffusers | ✅ | 3 | 3/3 | **55.20** |
-| LTX-2.3 | ⚠️ | 3 | 3/3 | **17.07** |
-| ideogram-4-fp8 | ✅ | 3 | 3/3 | **3.70** |
-| Cosmos3-Super | ✅ | 3 | 2/3 | **119.42** |
-| Wan2.2-I2V-A14B-Diffusers | ✅ | 3 | 3/3 | **201.74** |
-| MiniMax-H3 | ✅ | 3 | 3/3 | **77.30** |
+| Wan2.2-T2V-A14B-Diffusers | ✅ | 3 | 3/3 | **207.65** |
+| Wan2.2-TI2V-5B-Diffusers | ✅ | 3 | 3/3 | **55.19** |
+| LTX-2.3 | ✅ | 3 | 3/3 | **14.05** |
+| ideogram-4-fp8 | ✅ | 3 | 3/3 | **3.71** |
+| Cosmos3-Super | ✅ | 3 | 3/3 | **119.42** |
+| Wan2.2-I2V-A14B-Diffusers | ✅ | 3 | 2/3 | **202.62** |
+| MiniMax-H3 | ✅ | 3 | 3/3 | **78.24** |
 
 ## SGLang Server-Side Breakdown
 
 | Model | Server total (s) | Text encode (s) | Denoise (s) | Decode (s) | Median denoise step (ms) |
 |-------|------------------|-----------------|--------------|------------|---------------------------|
-| Anima-Base-v1.0-Diffusers | 3.26 | 0.00 | 3.01 | 0.24 | 101.02 |
-| FLUX.1-dev | 4.17 | 0.00 | 4.13 | 0.02 | 83.32 |
-| FLUX.2-dev | 12.16 | 0.00 | 12.13 | 0.01 | 241.89 |
-| Qwen-Image-2512 | 9.01 | 0.00 | 8.84 | 0.07 | 176.92 |
-| Qwen-Image-Edit-2511 | 14.33 | N/A | 14.06 | 0.11 | 352.98 |
-| Z-Image-Turbo | 0.52 | 0.00 | 0.49 | 0.01 | 56.48 |
-| Wan2.2-T2V-A14B-Diffusers | 206.21 | 0.01 | 203.88 | 2.25 | 5094.76 |
-| Wan2.2-TI2V-5B-Diffusers | 53.14 | 0.00 | 48.23 | 4.81 | 972.83 |
-| LTX-2.3 | 14.87 | 0.41 | 11.39 | 1.00 | 378.37 |
-| ideogram-4-fp8 | 3.60 | 0.01 | 3.50 | 0.08 | 177.41 |
-| Cosmos3-Super | 118.34 | 0.00 | 115.32 | 2.46 | N/A |
-| Wan2.2-I2V-A14B-Diffusers | 200.82 | 0.01 | 195.12 | 2.19 | 4873.34 |
-| MiniMax-H3 | 76.62 | 0.00 | 74.01 | 1.30 | 1535.45 |
+| Anima-Base-v1.0-Diffusers | 3.24 | 0.00 | 3.01 | 0.22 | 100.97 |
+| FLUX.1-dev | 4.15 | 0.01 | 4.09 | 0.02 | 82.05 |
+| FLUX.2-dev | 12.25 | 0.00 | 12.21 | 0.01 | 243.69 |
+| Qwen-Image-2512 | 8.09 | 0.00 | 8.02 | 0.06 | 161.01 |
+| Qwen-Image-Edit-2511 | 14.36 | N/A | 14.12 | 0.10 | 354.25 |
+| Z-Image-Turbo | 0.51 | 0.00 | 0.50 | 0.01 | 57.35 |
+| Wan2.2-T2V-A14B-Diffusers | 206.75 | 0.00 | 204.43 | 2.24 | 5110.61 |
+| Wan2.2-TI2V-5B-Diffusers | 53.24 | 0.00 | 48.38 | 4.78 | 976.10 |
+| LTX-2.3 | 12.52 | 0.40 | 9.14 | 0.95 | 302.98 |
+| ideogram-4-fp8 | 3.61 | 0.00 | 3.51 | 0.08 | 178.56 |
+| Cosmos3-Super | 118.81 | 0.00 | 115.85 | 2.40 | N/A |
+| Wan2.2-I2V-A14B-Diffusers | 201.06 | 0.05 | 195.54 | 2.18 | 4884.52 |
+| MiniMax-H3 | 76.79 | 0.00 | 74.17 | 1.31 | 1538.62 |
 
 ### Latency Trend: anima_base_t2i_1024
 
@@ -122,8 +114,9 @@
 
 | Date | Commit | anima_base_t2i_1024 (s) | flux1_dev_t2i_1024 (s) | flux2_dev_t2i_1024 (s) | qwen_image_2512_t2i_1024 (s) | qwen_image_edit_2511 (s) | zimage_turbo_t2i_1024 (s) | wan22_t2v_a14b_720p (s) | wan22_ti2v_5b_720p (s) | ltx2.3_twostage_ti2v_2gpus (s) | ideogram4_fp8_t2i_2gpu (s) | cosmos3_super_t2v_2gpu (s) | wan22_i2v_a14b_720p (s) | minimax_h3_t2va_5s (s) | Trend |
 |------|--------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|---------|-------|
-| Sep 29 | `bd78095` | 3.28 | 4.33 | 12.28 | 9.12 | 14.40 | 0.64 | 207.63 | 55.20 | 17.07 | 3.70 | 119.42 | 201.74 | 77.30 |             |
+| Sep 29 | `98fce73` | 3.25 | 4.28 | 12.38 | 8.16 | 14.43 | 0.64 | 207.65 | 55.19 | 14.05 | 3.71 | 119.42 | 202.62 | 78.24 |             |
 |  | `?` | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |             |
+| Sep 29 | `bd78095` | 3.28 | 4.33 | 12.28 | 9.12 | 14.40 | 0.64 | 207.63 | 55.20 | 17.07 | 3.70 | 119.42 | 201.74 | 77.30 | :left_right_arrow:  :arrow_down:  :arrow_down:  :left_right_arrow:  :arrow_down:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Sep 27 | `a0ba196` | 3.31 | 4.45 | 13.12 | 9.24 | 14.92 | 0.78 | 207.66 | 55.15 | 20.08 | 3.82 | 119.34 | 201.67 | 78.20 |  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Sep 25 | `2f5c9ac` | N/A | 4.45 | 13.25 | 8.32 | 14.82 | 0.96 | 207.60 | 56.16 | 13.05 | 3.82 | 118.38 | 201.62 | 77.22 |  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Sep 23 | `172b1b4` | N/A | 4.62 | 13.35 | 8.40 | 14.92 | 0.77 | 207.82 | 56.24 | 14.06 | 3.84 | 119.44 | 201.80 | 78.29 |  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
@@ -150,16 +143,7 @@
 | Aug 18 | `af74337` | N/A | 4.47 | 13.40 | 10.12 | 15.85 | 0.81 | 206.62 | 57.22 | 16.08 | 3.99 | 119.41 | 256.85 | 77.27 |  :arrow_down:  :left_right_arrow:  :arrow_up:  :arrow_up:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  :left_right_arrow:  :arrow_up:  :arrow_up:  :left_right_arrow: |
 | Aug 15 | `e331baa` | N/A | 4.57 | 13.44 | 8.80 | 15.38 | 0.78 | 206.70 | 56.15 | 13.05 | 4.06 | 115.33 | 201.58 | 77.22 |  :arrow_up:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow: |
 | Aug 15 | `8720a72` | N/A | 4.44 | 13.30 | 9.81 | 15.39 | 0.78 | 206.64 | 56.16 | 16.06 | 4.08 | 115.32 | 200.62 | 77.19 |  :arrow_down:  :arrow_down:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :left_right_arrow: |
-| Aug 13 | `07821e9` | N/A | 5.57 | 15.73 | 9.81 | 15.38 | 0.78 | 206.72 | 56.17 | 16.07 | 4.08 | 115.34 | 206.69 | 77.26 |  :left_right_arrow:  :arrow_down:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :left_right_arrow:  :arrow_down:  :arrow_up:  :left_right_arrow:  :left_right_arrow:  :arrow_up:  |
-| Aug 12 | `9dbe519` | N/A | 5.58 | 16.76 | 8.80 | 15.61 | 0.77 | 207.69 | 64.19 | 14.06 | 4.11 | 115.41 | 201.76 | N/A | -- |
-
-> [!CAUTION]
-> **Action Required — Performance Alert**
->
-> The following cases need attention:
-> - qwen_image_2512_t2i_1024: SGLang regression +8.9% vs 4-run median (9.12s vs 8.38s)
-> - ltx2.3_twostage_ti2v_2gpus: SGLang regression +21.5% vs 4-run median (17.07s vs 14.06s)
-
+| Aug 13 | `07821e9` | N/A | 5.57 | 15.73 | 9.81 | 15.38 | 0.78 | 206.72 | 56.17 | 16.07 | 4.08 | 115.34 | 206.69 | 77.26 | -- |
 
 ---
 *Generated by `generate_diffusion_dashboard.py` in SGLang nightly CI.*
